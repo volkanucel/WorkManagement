@@ -1,0 +1,93 @@
+﻿@using EntityLayer.Entities;
+@model Equipment
+@{
+    ViewData["Title"] = "EditEquipment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+
+}
+
+    <h1>Edit Equipment</h1>
+
+    <form asp-controller="Equipment" asp-action="EditEquipment">
+        <input type="hidden" value="@Model.Id"/>
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="equipmentNameInput" class="form-label">Equipment Name</label>
+                    <input type="text" class="form-control" asp-for="@Model.Name" placeholder="Enter your Equipment" id="equipmentNameinput" value="@Model.Name">
+                </div>
+            </div><!--end col-->
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="descriptionInput" class="form-label">Description</label>
+                    <input type="text" class="form-control" asp-for="@Model.Description" placeholder="Enter your Description" id="descriptioninput" value="@Model.Description">
+                </div>
+            </div><!--end col-->
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="serialNoInput" class="form-label">Serial No</label>
+                    <input type="text" class="form-control" asp-for="@Model.SerialNo" placeholder="Enter Serial No" id="serialNoinput" value="@Model.SerialNo">
+                </div>
+            </div><!--end col-->
+
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="vendorNameInput" class="form-label">Vendor Name</label>
+                    <input type="text" class="form-control" asp-for="@Model.VendorName" placeholder="Enter Vendor Name " id="vendorNameInput" value="@Model.VendorName">
+                </div>
+            </div><!--end col-->
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="date-field" class="form-label">Production Date</label>
+                    <input type="text" id="date-field" class="form-control flatpickr-input active" asp-for="@Model.ProductionDate" data-provider="flatpickr" data-date-format="d M, Y" required="" placeholder="Select date" readonly="readonly" value="@Model.ProductionDate">
+
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div>
+                        <label for="date-field">Date</label>
+                        <input type="datetime" class="form-control bg-light border-0" id="date-field" data-provider="flatpickr" data-time="true" placeholder="Select Date-time" value="@Model.ProductionDate">
+                    </div>
+                </div>
+
+            </div><!--end col-->
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="warrantyExpireDateInput" class="form-label">Warranty Expire Date</label>
+                    <input type="datetime" class="form-control" asp-for="@Model.WarrantyExpireDate" id="warrantyExpireDateInput" value="@Model.WarrantyExpireDate">
+                </div>
+            </div><!--end col-->
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="equipmentTypeIdInput" class="form-label">Equipment Type Id</label>
+                    <input type="number" class="form-control" asp-for="@Model.EquipmentTypeId" placeholder="Enter Equipment Type Id" id="equipmentTypeIdInput" value="@Model.EquipmentTypeId">
+                </div>
+            </div><!--end col-->
+
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="groupIdInput" class="form-label">GroupId</label>
+                    <input type="number" class="form-control" asp-for="@Model.GroupId" placeholder="Enter your Group Id" id="groupIdInput" value="@Model.GroupId">
+                </div>
+            </div><!--end col-->
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="locationIdInput" class="form-label">LocationId</label>
+                    <input type="number" class="form-control" asp-for="@Model.LocationId" placeholder="Enter your LocationId" id="locationIdInput" value="@Model.LocationId">
+                </div>
+            </div><!--end col-->
+
+            <div class="col-lg-12">
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary">Edit Equipment</button>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </form>
+
+    @section scripts{
+    
+}

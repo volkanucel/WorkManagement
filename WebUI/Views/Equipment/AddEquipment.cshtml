@@ -1,0 +1,129 @@
+﻿@using EntityLayer.Entities;
+@model Equipment
+@{
+    ViewData["Title"] = "AddEquipment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section styles{
+
+   <!-- dropzone css -->
+    <link rel="stylesheet" href="~/assets/libs/dropzone/dropzone.css" type="text/css" />
+
+    <!-- Sweet Alert css-->
+    <link href="~/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Layout config Js -->
+    <script src="~/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="~/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="~/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="~/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+}
+
+    <h1>Add Equipment</h1>
+
+    <form asp-controller="Equipment" asp-action="AddEquipment">
+        <div class="row">
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="equipmentNameInput" class="form-label">Equipment Name</label>
+                    <input type="text" class="form-control" asp-for="@Model.Name" placeholder="Enter your Equipment" id="equipmentNameinput">
+                </div>
+            </div><!--end col-->
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="descriptionInput" class="form-label">Description</label>
+                    <input type="text" class="form-control" asp-for="@Model.Description" placeholder="Enter your Description" id="descriptioninput">
+                </div>
+            </div><!--end col-->
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="serialNoInput" class="form-label">Serial No</label>
+                    <input type="text" class="form-control" asp-for="@Model.SerialNo" placeholder="Enter Serial No" id="serialNoinput">
+                </div>
+            </div><!--end col-->
+
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="vendorNameInput" class="form-label">Vendor Name</label>
+                    <input type="text" class="form-control" asp-for="@Model.VendorName" placeholder="Enter Vendor Name " id="vendorNameInput">
+                </div>
+            </div><!--end col-->
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="date-field" class="form-label">Production Date</label>
+                    <input type="text" id="date-field" class="form-control flatpickr-input active" asp-for="@Model.ProductionDate" data-provider="flatpickr" data-date-format="d M, Y" required="" placeholder="Select date" readonly="readonly">
+
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                    <div>
+                        <label for="date-field">Date</label>
+                        <input type="text" class="form-control bg-light border-0" id="date-field" data-provider="flatpickr" data-time="true" placeholder="Select Date-time">
+                    </div>
+                </div>
+
+            </div><!--end col-->
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="warrantyExpireDateInput" class="form-label">Warranty Expire Date</label>
+                    <input type="datetime" class="form-control" asp-for="@Model.WarrantyExpireDate" id="warrantyExpireDateInput">
+                </div>
+            </div><!--end col-->
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="equipmentTypeIdInput" class="form-label">Equipment Type Id</label>
+                    <input type="number" class="form-control" asp-for="@Model.EquipmentTypeId" placeholder="Enter Equipment Type Id" id="equipmentTypeIdInput">
+                </div>
+            </div><!--end col-->
+
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="groupIdInput" class="form-label">GroupId</label>
+                    <input type="number" class="form-control" asp-for="@Model.GroupId" placeholder="Enter your Group Id" id="groupIdInput">
+                </div>
+            </div><!--end col-->
+            <div class="col-6">
+                <div class="mb-3">
+                    <label for="locationIdInput" class="form-label">LocationId</label>
+                    <input type="number" class="form-control" asp-for="@Model.LocationId" placeholder="Enter your LocationId" id="locationIdInput">
+                </div>
+            </div><!--end col-->
+
+            <div class="col-lg-12">
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary">Add Equipment</button>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </form>
+
+    @section scripts{
+    <script src="~/assets/js/app.js"></script>
+
+    <script src="~/assets/libs/sweetalert2/sweetalert2.min.js"></script>
+
+        <script src="~/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="~/assets/libs/node-waves/waves.min.js"></script>
+    <script src="~/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="~/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="~/assets/js/plugins.js"></script>
+
+    <!-- dropzone min -->
+    <script src="~/assets/libs/dropzone/dropzone-min.js"></script>
+
+    <!-- cleave.js -->
+    <script src="~/assets/libs/cleave.js/cleave.min.js"></script>
+
+    <!--Invoice create init js-->
+    <script src="~/assets/js/pages/invoicecreate.init.js"></script>
+}
+

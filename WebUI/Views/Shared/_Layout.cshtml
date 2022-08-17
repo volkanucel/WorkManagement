@@ -1,0 +1,514 @@
+﻿
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="sm-hover">
+
+
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Work Management - Suistainable Operations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico">
+
+    <!-- jsvectormap css -->
+    <link href="~/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+    <!--Swiper slider css-->
+    <link href="~/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Layout config Js -->
+    <script src="~/assets/js/layout.js"></script>
+    <!-- Bootstrap Css -->
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="~/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="~/assets/css/app.min.css" rel="stylesheet" type="text/css" />
+    <!-- custom Css-->
+    <link href="~/assets/css/custom.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Sweet Alert css-->
+    <link href="~/assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+
+    @RenderSectionAsync("styles",required:false)
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+
+                        <button type="button"
+                                class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
+                                id="topnav-hamburger-icon">
+                            <span class="hamburger-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+
+                        <!-- App Search-->
+                        <form class="app-search d-none d-md-block">
+                            <div class="position-relative">
+                                <input type="text" class="form-control" placeholder="Search..." autocomplete="off"
+                                       id="search-options" value="">
+                                <span class="mdi mdi-magnify search-widget-icon"></span>
+                                <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none"
+                                      id="search-close-options"></span>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+
+
+                        <div class="dropdown ms-1 topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img id="header-lang-img" src="~/assets/images/flags/us.svg" alt="Header Language"
+                                     height="20" class="rounded">
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item language py-2"
+                                   data-lang="en" title="English">
+                                    <img src="~/assets/images/flags/us.svg" alt="user-image" class="me-2 rounded"
+                                         height="18">
+                                    <span class="align-middle">English</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item language" data-lang="sp"
+                                   title="Spanish">
+                                    <img src="~/assets/images/flags/spain.svg" alt="user-image" class="me-2 rounded"
+                                         height="18">
+                                    <span class="align-middle">Türkçe</span>
+                                </a>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="ms-1 header-item d-sm-flex">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                    data-toggle="fullscreen">
+                                <i class='bx bx-fullscreen fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="ms-1 header-item d-sm-flex">
+                            <button type="button"
+                                    class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode">
+                                <i class='bx bx-moon fs-22'></i>
+                            </button>
+                        </div>
+
+                        <div class="dropdown topbar-head-dropdown ms-1 header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
+                                    id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                <i class='bx bx-bell fs-22'></i>
+                                <span class="position-absolute topbar-badge fs-10 translate-middle badge rounded-pill bg-danger">
+                                    1<span class="visually-hidden">unread messages</span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                 aria-labelledby="page-header-notifications-dropdown">
+
+                                <div class="dropdown-head bg-primary bg-pattern rounded-top">
+                                    <div class="p-3">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <h6 class="m-0 fs-16 fw-semibold text-white"> Notifications </h6>
+                                            </div>
+                                            <div class="col-auto dropdown-tabs">
+                                                <span class="badge badge-soft-light fs-13"> 1 New</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="px-2 pt-2">
+                                        <ul class="nav nav-tabs dropdown-tabs nav-tabs-custom" data-dropdown-tabs="true"
+                                            id="notificationItemsTab" role="tablist">
+                                            <li class="nav-item waves-effect waves-light">
+                                                <a class="nav-link active" data-bs-toggle="tab" href="#all-noti-tab"
+                                                   role="tab" aria-selected="true">
+                                                    All (1)
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item waves-effect waves-light">
+                                                <a class="nav-link" data-bs-toggle="tab" href="#alerts-tab" role="tab"
+                                                   aria-selected="false">
+                                                    Alerts
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                <span class="d-flex align-items-center">
+                                    <img class="rounded-circle header-profile-user"
+                                         src="~/assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                                    <span class="text-start ms-xl-2">
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">
+
+                                            Kullanıcı Adı
+
+                                        </span>
+                                        <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Admin</span>
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header">Welcome Kullanıcı Adı !</h6>
+                                <a class="dropdown-item" href="#">
+                                    <i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span>
+                                </a>
+
+                                <a class="dropdown-item" href="#">
+                                    <i class="mdi mdi-calendar-check-outline text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Taskboard</span>
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+
+                                <a class="dropdown-item" asp-controller="Settings" asp-action="Index">
+                                    <i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1">
+                                    </i> <span class="align-middle">Settings</span>
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Lock screen</span>
+                                </a>
+                                <a class="dropdown-item" asp-controller="Logout" asp-action="UserLogout">
+                                    <i class="mdi mdi-logout text-muted fs-16 align-middle me-1"><span class="align-middle" data-key="t-logout">Logout</span></i>
+                                </a>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        @*<div id="partialAdmin">
+
+                        </div>
+
+
+                        @section Scripts {
+
+                        <script>$("#partialAdmin").load("/Home/_partialAdminSection")</script>
+                        }*@
+
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+
+                <!-- Light Logo-->
+                <a asp-controller="Home" asp-action="Index" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="~/assets/images/logo-sm.png" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <!-- <img src="~/assets/images/logo-light.png" alt="" height="17"> -->
+                        <h3 class="text-light">Work Management</h3>
+                    </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
+                        id="vertical-hover">
+                    <i class="ri-record-circle-line"></i>
+                </button>
+            </div>
+
+            <div id="scrollbar">
+                <div class="container-fluid">
+
+                    <div id="two-column-menu">
+                    </div>
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li class="menu-title"><span data-key="t-menu">Menu</span></li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse"
+                               role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                <i class="las la-tachometer-alt"></i> <span data-key="t-dashboards">Dashboards</span>
+                            </a>
+                        </li> <!-- end Dashboard Menu -->
+
+                        <li class="menu-title">
+                            <i class="ri-more-fill"></i> <span data-key="t-components">
+                                Ara Bölüm
+                                Başlığı 1
+                            </span>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
+                               aria-expanded="false" aria-controls="sidebarLayouts">
+                                <i class="las la-columns"></i> <span data-key="t-layouts">Project</span>
+                            </a>
+
+                        </li> <!-- end Dashboard Menu -->
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#equipments" data-bs-toggle="collapse" role="button"
+                               aria-expanded="false" aria-controls="equipments">
+                                <i class="las la-columns"></i> <span data-key="t-layouts">Equipments</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="equipments">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a asp-controller="Equipment" asp-action="Index" class="nav-link" data-key="t-basic-tables">
+                                            Equipment List
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a asp-controller="Equipment" asp-action="NewEquipment" class="nav-link" data-key="t-grid-js">
+                                            Equipment Type
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
+                               aria-expanded="false" aria-controls="sidebarLayouts">
+                                <i class="las la-columns"></i> <span data-key="t-layouts">Locations</span>
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
+                               aria-expanded="false" aria-controls="sidebarLayouts">
+                                <i class="las la-columns"></i> <span data-key="t-layouts">Groups</span>
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
+                               aria-expanded="false" aria-controls="sidebarLayouts">
+                                <i class="las la-columns"></i> <span data-key="t-layouts">Users</span>
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
+                               aria-expanded="false" aria-controls="sidebarLayouts">
+                                <i class="las la-columns"></i> <span data-key="t-layouts">Messages</span>
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
+                               aria-expanded="false" aria-controls="sidebarLayouts">
+                                <i class="las la-columns"></i> <span data-key="t-layouts">Training</span>
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
+                               aria-expanded="false" aria-controls="sidebarLayouts">
+                                <i class="las la-columns"></i> <span data-key="t-layouts">Work Descriptions</span>
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
+                               aria-expanded="false" aria-controls="sidebarLayouts">
+                                <i class="las la-columns"></i> <span data-key="t-layouts">Work Orders</span>
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
+                               aria-expanded="false" aria-controls="sidebarLayouts">
+                                <i class="las la-columns"></i> <span data-key="t-layouts">Work Order Calendar</span>
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
+                               aria-expanded="false" aria-controls="sidebarLayouts">
+                                <i class="las la-columns"></i> <span data-key="t-layouts">Checklist</span>
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarLayouts" data-bs-toggle="collapse" role="button"
+                               aria-expanded="false" aria-controls="sidebarLayouts">
+                                <i class="las la-columns"></i> <span data-key="t-layouts">
+                                    Authorized Service
+                                    Record
+                                </span>
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button"
+                               aria-expanded="false" aria-controls="sidebarTables">
+                                <i class="las la-table"></i> <span data-key="t-tables">Reports</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarTables">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-basic-tables">
+                                            Sub Menu 1
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-grid-js">
+                                            Sub Menu 2
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link" data-key="t-list-js">
+                                            Sub Menu 3
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0">@ViewData["Title"]</h4>
+
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+                                        <li class="breadcrumb-item active">Dashboard</li>
+                                    </ol>
+                                </div>
+
+                            </div>
+
+                            @RenderBody()
+
+
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                </div> <!-- end .h-100-->
+
+            </div> <!-- end col -->
+        </div> <!-- main-content -->
+        <!-- container-fluid -->
+        <!-- End Page-content -->
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <script>document.write(new Date().getFullYear())</script> © Work Management Corp.
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-sm-end d-none d-sm-block">
+                            Designed & Developed by Volkan Üçel
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+    <!-- JAVASCRIPT -->
+    <script src="~/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="~/assets/libs/node-waves/waves.min.js"></script>
+    <script src="~/assets/libs/feather-icons/feather.min.js"></script>
+    <script src="~/assets/js/pages/plugins/lord-icon-2.1.0.js"></script>
+    <script src="~/assets/js/plugins.js"></script>
+
+    <!-- apexcharts -->
+    <script src="~/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Vector map-->
+    <script src="~/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+    <script src="~/assets/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!--Swiper slider js-->
+    <script src="~/assets/libs/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Dashboard init -->
+    <script src="~/assets/js/pages/dashboard-ecommerce.init.js"></script>
+
+    <!-- App js -->
+    <script src="~/assets/js/app.js"></script>
+
+
+
+    <!-- titcket init js -->
+    <script src="~/assets/js/pages/ticketlist.init.js"></script>
+
+    <!-- Sweet Alerts js -->
+    <script src="~/assets/libs/sweetalert2/sweetalert2.min.js"></script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+
+</html>
+
